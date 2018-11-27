@@ -10,16 +10,17 @@ import scrapy
 
 class LoveFitnessItem(scrapy.Item):
     # define the fields for your item here like:
-    # b_href = scrapy.Field()
-    # s_href = scrapy.Field()
-    # s_cate = scrapy.Field()
-    # title = scrapy.Field()
-    # img = scrapy.Field()
-    # date = scrapy.Field()
-    # category = scrapy.Field()
-    # href = scrapy.Field()
-    # author = scrapy.Field()
-    # content = scrapy.Field()
-    # content_img = scrapy.Field()
-    pass
+    b_cate = scrapy.Field()  # 大分类前3个分类
+    s_href = scrapy.Field()  # 分类href
+    s_cate = scrapy.Field()  # 分类名称
+    title = scrapy.Field()  # 标题
+    img = scrapy.Field()  # 列表页每个文章图片
+    href = scrapy.Field()  # 每篇文章href
+    date = scrapy.Field()  # 上传日期
+    category = scrapy.Field()  # 分类名称
+    author = scrapy.Field()  # 作者
+    content = scrapy.Field()  # 详情页内容
+    content_img = scrapy.Field()  # 详情页图片
+    video = scrapy.Field()  # 详情页视频
+    content_html = scrapy.Field()  # 详情页article源码
 

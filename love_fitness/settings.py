@@ -8,14 +8,20 @@
 #     https://doc.scrapy.org/en/latest/topics/settings.html
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
+import datetime
+
 
 BOT_NAME = 'love_fitness'
 
 SPIDER_MODULES = ['love_fitness.spiders']
 NEWSPIDER_MODULE = 'love_fitness.spiders'
 
-LOG_LEVEL = 'WARNING'
 
+to_day = datetime.datetime.now()  # 获取当前时间
+log_file_path = 'log/scrapy_{}_{}_{}.log'.format(to_day.year,to_day.month,to_day.day)  # 日志文件名 scrapy_年_月_日.log
+
+LOG_LEVEL = 'WARNING'
+LOG_FILE = log_file_path
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'
 
@@ -89,3 +95,14 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+# MONGODB 主机环回地址127.0.0.1
+MONGODB_HOST = '127.0.0.1'
+# 端口号，默认是27017
+MONGODB_PORT = 27017
+# 设置数据库名称
+MONGODB_DBNAME = 'Fitness'
+# 存放本次数据的表名称
+MONGODB_DOCNAME = 'fitness'
+
